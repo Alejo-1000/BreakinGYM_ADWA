@@ -1,4 +1,4 @@
-﻿using BreakingGym.EntidadNegocioEN;
+﻿using BreakingGym.EntidadesNegocioEN;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,22 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BreakingGym.LogicaAccesoDatosDAL
+namespace BreakingGym.LogicasAccesoDatosDAL
 {
-    public class EstadoDAL
+    public class TipoDocumentoDAL
     {
-        public List<EstadoEN> MostrarEstado()
+        public static List<TipoDocumentoEN> MostrarTipoDocumento()
         {
-            List<EstadoEN> _Lista = new List<EstadoEN>();
+            List<TipoDocumentoEN> _Lista = new List<TipoDocumentoEN>();
             using (IDbConnection _conn = ComunBD.ObtenerConexion(ComunBD.TipoBD.SqlServer))
             {
                 _conn.Open();
-                SqlCommand _comando = new SqlCommand("MostrarEstado", _conn as SqlConnection);
+                SqlCommand _comando = new SqlCommand("MostrarTipoDocumento", _conn as SqlConnection);
                 _comando.CommandType = CommandType.StoredProcedure;
                 IDataReader _reader = _comando.ExecuteReader();
                 while (_reader.Read())
                 {
-                    _Lista.Add(new EstadoEN
+                    _Lista.Add(new TipoDocumentoEN
                     {
                         Id = _reader.GetInt32(0),
                         Nombre = _reader.GetString(1)
@@ -34,43 +34,43 @@ namespace BreakingGym.LogicaAccesoDatosDAL
             return _Lista;
         }
 
-        public  int AgregarEstado(EstadoEN pestadoEN)
+        public static int AgregarTipoDocumento(TipoDocumentoEN pTipoDocumentoEN)
         {
             using (IDbConnection _conn = ComunBD.ObtenerConexion(ComunBD.TipoBD.SqlServer))
             {
                 _conn.Open();
-                SqlCommand _comando = new SqlCommand("GuardarEstado", _conn as SqlConnection);
+                SqlCommand _comando = new SqlCommand("GuardarTipoDocumento", _conn as SqlConnection);
                 _comando.CommandType = CommandType.StoredProcedure;
-                _comando.Parameters.Add(new SqlParameter("@Nombre", pestadoEN.Nombre));
+                _comando.Parameters.Add(new SqlParameter("@Nombre", pTipoDocumentoEN.Nombre));
                 int resultado = _comando.ExecuteNonQuery();
                 _conn.Close();
                 return resultado;
             }
         }
 
-        public  int EliminarEstado(EstadoEN pestadoEN)
+        public static int EliminarTipoDocumento(TipoDocumentoEN pTipoDocumentoEN)
         {
             using (IDbConnection _conn = ComunBD.ObtenerConexion(ComunBD.TipoBD.SqlServer))
             {
                 _conn.Open();
-                SqlCommand _comando = new SqlCommand("EliminarEstado", _conn as SqlConnection);
+                SqlCommand _comando = new SqlCommand("EliminarTipoDocumento", _conn as SqlConnection);
                 _comando.CommandType = CommandType.StoredProcedure;
-                _comando.Parameters.Add(new SqlParameter("@Id", pestadoEN.Id));
+                _comando.Parameters.Add(new SqlParameter("@Id", pTipoDocumentoEN.Id));
                 int resultado = _comando.ExecuteNonQuery();
                 _conn.Close();
                 return resultado;
             }
         }
 
-        public  int ModificarEstado(EstadoEN pestadoEN)
+        public static int ModificarTipoDocumento(TipoDocumentoEN pTipoDocumentoEN)
         {
             using (IDbConnection _conn = ComunBD.ObtenerConexion(ComunBD.TipoBD.SqlServer))
             {
                 _conn.Open();
-                SqlCommand _comando = new SqlCommand("ModificarEstado", _conn as SqlConnection);
+                SqlCommand _comando = new SqlCommand("ModificarTipoDocumento", _conn as SqlConnection);
                 _comando.CommandType = CommandType.StoredProcedure;
-                _comando.Parameters.Add(new SqlParameter("@Id", pestadoEN.Id));
-                _comando.Parameters.Add(new SqlParameter("@Nombre", pestadoEN.Nombre));
+                _comando.Parameters.Add(new SqlParameter("@Id", pTipoDocumentoEN.Id));
+                _comando.Parameters.Add(new SqlParameter("@Nombre", pTipoDocumentoEN.Nombre));
                 int resultado = _comando.ExecuteNonQuery();
                 _conn.Close();
                 return resultado;

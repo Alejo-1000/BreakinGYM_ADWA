@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BreakingGym.EntidadNegocioEN
+namespace BreakingGym.EntidadesNegocioEN
 {
-    public class EstadoEN
+    public class ServicioEN
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
+        public string Descripcion { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿using BreakingGym.EntidadNegocioEN;
+﻿using BreakingGym.EntidadesNegocioEN;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,26 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BreakingGym.LogicaAccesoDatosDAL
+namespace BreakingGym.LogicasAccesoDatosDAL
 {
-    public class TipoDocumentoDAL
+    public class RolDAL
     {
-        public static List<TipoDocumentoEN> MostrarTipoDocumento()
+        public static List<RolEN> MostrarRol()
         {
-            List<TipoDocumentoEN> _Lista = new List<TipoDocumentoEN>();
+            List<RolEN> _Lista = new List<RolEN>();
             using (IDbConnection _conn = ComunBD.ObtenerConexion(ComunBD.TipoBD.SqlServer))
             {
                 _conn.Open();
-                SqlCommand _comando = new SqlCommand("MostrarTipoDocumento", _conn as SqlConnection);
+                SqlCommand _comando = new SqlCommand("MostrarRol", _conn as SqlConnection);
                 _comando.CommandType = CommandType.StoredProcedure;
                 IDataReader _reader = _comando.ExecuteReader();
                 while (_reader.Read())
                 {
-                    _Lista.Add(new TipoDocumentoEN
+                    _Lista.Add(new RolEN
                     {
                         Id = _reader.GetInt32(0),
                         Nombre = _reader.GetString(1)
-
                     });
                 }
                 _conn.Close();
@@ -34,47 +33,48 @@ namespace BreakingGym.LogicaAccesoDatosDAL
             return _Lista;
         }
 
-        public static int AgregarTipoDocumento(TipoDocumentoEN pTipoDocumentoEN)
+        public static int AgregarRol(RolEN prolEN)
         {
             using (IDbConnection _conn = ComunBD.ObtenerConexion(ComunBD.TipoBD.SqlServer))
             {
                 _conn.Open();
-                SqlCommand _comando = new SqlCommand("GuardarTipoDocumento", _conn as SqlConnection);
+                SqlCommand _comando = new SqlCommand("GuardarRol", _conn as SqlConnection);
                 _comando.CommandType = CommandType.StoredProcedure;
-                _comando.Parameters.Add(new SqlParameter("@Nombre", pTipoDocumentoEN.Nombre));
+                _comando.Parameters.Add(new SqlParameter("@Nombre", prolEN.Nombre));
                 int resultado = _comando.ExecuteNonQuery();
                 _conn.Close();
                 return resultado;
             }
         }
 
-        public static int EliminarTipoDocumento(TipoDocumentoEN pTipoDocumentoEN)
+        public static int EliminarRol(RolEN prolEN)
         {
             using (IDbConnection _conn = ComunBD.ObtenerConexion(ComunBD.TipoBD.SqlServer))
             {
                 _conn.Open();
-                SqlCommand _comando = new SqlCommand("EliminarTipoDocumento", _conn as SqlConnection);
+                SqlCommand _comando = new SqlCommand("EliminarRol", _conn as SqlConnection);
                 _comando.CommandType = CommandType.StoredProcedure;
-                _comando.Parameters.Add(new SqlParameter("@Id", pTipoDocumentoEN.Id));
+                _comando.Parameters.Add(new SqlParameter("@Id", prolEN.Id));
                 int resultado = _comando.ExecuteNonQuery();
                 _conn.Close();
                 return resultado;
             }
         }
 
-        public static int ModificarTipoDocumento(TipoDocumentoEN pTipoDocumentoEN)
+        public static int ModificarRol(RolEN prolEN)
         {
             using (IDbConnection _conn = ComunBD.ObtenerConexion(ComunBD.TipoBD.SqlServer))
             {
                 _conn.Open();
-                SqlCommand _comando = new SqlCommand("ModificarTipoDocumento", _conn as SqlConnection);
+                SqlCommand _comando = new SqlCommand("ModificarRol", _conn as SqlConnection);
                 _comando.CommandType = CommandType.StoredProcedure;
-                _comando.Parameters.Add(new SqlParameter("@Id", pTipoDocumentoEN.Id));
-                _comando.Parameters.Add(new SqlParameter("@Nombre", pTipoDocumentoEN.Nombre));
+                _comando.Parameters.Add(new SqlParameter("@Id", prolEN.Id));
+                _comando.Parameters.Add(new SqlParameter("@Nombre", prolEN.Nombre));
                 int resultado = _comando.ExecuteNonQuery();
                 _conn.Close();
                 return resultado;
             }
         }
+
     }
 }

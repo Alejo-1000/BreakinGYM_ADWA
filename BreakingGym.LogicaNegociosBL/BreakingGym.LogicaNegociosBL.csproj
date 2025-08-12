@@ -6,9 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\BreakingGym.EntidadNegocioEN\BreakingGym.EntidadNegocioEN.csproj" />
-    <ProjectReference Include="..\BreakingGym.LogicaAccesoDatosDAL\BreakingGym.LogicaAccesoDatosDAL.csproj" />
-  </ItemGroup>
-
 </Project>

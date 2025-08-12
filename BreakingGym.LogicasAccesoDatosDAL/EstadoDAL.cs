@@ -1,4 +1,4 @@
-﻿using BreakingGym.EntidadNegocioEN;
+﻿using BreakingGym.EntidadesNegocioEN;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,26 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BreakingGym.LogicaAccesoDatosDAL
+namespace BreakingGym.LogicasAccesoDatosDAL
 {
-    public class ServicioDAL
+    public class EstadoDAL
     {
-        public static List<ServicioEN> MostrarServicio()
+        public List<EstadoEN> MostrarEstado()
         {
-            List<ServicioEN> _Lista = new List<ServicioEN>();
+            List<EstadoEN> _Lista = new List<EstadoEN>();
             using (IDbConnection _conn = ComunBD.ObtenerConexion(ComunBD.TipoBD.SqlServer))
             {
                 _conn.Open();
-                SqlCommand _comando = new SqlCommand("MostrarServicio", _conn as SqlConnection);
+                SqlCommand _comando = new SqlCommand("MostrarEstado", _conn as SqlConnection);
                 _comando.CommandType = CommandType.StoredProcedure;
                 IDataReader _reader = _comando.ExecuteReader();
                 while (_reader.Read())
                 {
-                    _Lista.Add(new ServicioEN
+                    _Lista.Add(new EstadoEN
                     {
                         Id = _reader.GetInt32(0),
-                        Nombre = _reader.GetString(1),
-                        Descripcion = _reader.GetString(2)
+                        Nombre = _reader.GetString(1)
+
                     });
                 }
                 _conn.Close();
@@ -34,50 +34,47 @@ namespace BreakingGym.LogicaAccesoDatosDAL
             return _Lista;
         }
 
-        public static int AgregarServicio(ServicioEN pservicioEN)
+        public  int AgregarEstado(EstadoEN pestadoEN)
         {
             using (IDbConnection _conn = ComunBD.ObtenerConexion(ComunBD.TipoBD.SqlServer))
             {
                 _conn.Open();
-                SqlCommand _comando = new SqlCommand("GuardarServicio", _conn as SqlConnection);
+                SqlCommand _comando = new SqlCommand("GuardarEstado", _conn as SqlConnection);
                 _comando.CommandType = CommandType.StoredProcedure;
-                _comando.Parameters.Add(new SqlParameter("@Nombre", pservicioEN.Nombre));
-                _comando.Parameters.Add(new SqlParameter("@Descripcion", pservicioEN.Descripcion));
+                _comando.Parameters.Add(new SqlParameter("@Nombre", pestadoEN.Nombre));
                 int resultado = _comando.ExecuteNonQuery();
                 _conn.Close();
                 return resultado;
             }
         }
 
-        public static int EliminarServicio(ServicioEN pservicioEN)
+        public  int EliminarEstado(EstadoEN pestadoEN)
         {
             using (IDbConnection _conn = ComunBD.ObtenerConexion(ComunBD.TipoBD.SqlServer))
             {
                 _conn.Open();
-                SqlCommand _comando = new SqlCommand("EliminarServicio", _conn as SqlConnection);
+                SqlCommand _comando = new SqlCommand("EliminarEstado", _conn as SqlConnection);
                 _comando.CommandType = CommandType.StoredProcedure;
-                _comando.Parameters.Add(new SqlParameter("@Id", pservicioEN.Id));
+                _comando.Parameters.Add(new SqlParameter("@Id", pestadoEN.Id));
                 int resultado = _comando.ExecuteNonQuery();
                 _conn.Close();
                 return resultado;
             }
         }
 
-        public static int ModificarServicio(ServicioEN pservicioEN)
+        public  int ModificarEstado(EstadoEN pestadoEN)
         {
             using (IDbConnection _conn = ComunBD.ObtenerConexion(ComunBD.TipoBD.SqlServer))
             {
                 _conn.Open();
-                SqlCommand _comando = new SqlCommand("ModificarServicio", _conn as SqlConnection);
+                SqlCommand _comando = new SqlCommand("ModificarEstado", _conn as SqlConnection);
                 _comando.CommandType = CommandType.StoredProcedure;
-                _comando.Parameters.Add(new SqlParameter("@Id", pservicioEN.Id));
-                _comando.Parameters.Add(new SqlParameter("@Nombre", pservicioEN.Nombre));
-                _comando.Parameters.Add(new SqlParameter("@Descripcion", pservicioEN.Descripcion));
+                _comando.Parameters.Add(new SqlParameter("@Id", pestadoEN.Id));
+                _comando.Parameters.Add(new SqlParameter("@Nombre", pestadoEN.Nombre));
                 int resultado = _comando.ExecuteNonQuery();
                 _conn.Close();
                 return resultado;
             }
         }
-
     }
 }

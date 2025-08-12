@@ -5,9 +5,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BreakingGym.EntidadNegocioEN;
+using BreakingGym.EntidadesNegocioEN;
 
-namespace BreakingGym.LogicaAccesoDatosDAL
+namespace BreakingGym.LogicasAccesoDatosDAL
 {
     public class MembresiaDAL
     {

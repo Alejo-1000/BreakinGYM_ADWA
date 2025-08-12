@@ -9,8 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BreakingGym.EntidadNegocioEN\BreakingGym.EntidadNegocioEN.csproj" />
-    <ProjectReference Include="..\BreakingGym.LogicaNegociosBL\BreakingGym.LogicaNegociosBL.csproj" />
+    <ProjectReference Include="..\BreakingGym.EntidadesNegocioEN\BreakingGym.EntidadesNegocioEN.csproj" />
+    <ProjectReference Include="..\BreakingGym.LogicasNegociosBL\BreakingGym.LogicasNegociosBL.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,5 @@
 ﻿//EN
-using BreakingGym.EntidadNegocioEN;
+using BreakingGym.EntidadesNegocioEN;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BreakingGym.LogicaAccesoDatosDAL
+namespace BreakingGym.LogicasAccesoDatosDAL
 {
     public class UsuarioDAL
     {
