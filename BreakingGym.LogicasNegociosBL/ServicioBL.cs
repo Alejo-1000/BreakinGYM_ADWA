@@ -8,7 +8,23 @@ using System.Threading.Tasks;
 
 namespace BreakingGym.LogicasNegociosBL
 {
-    internal class ServicioBL
+    public class ServicioBL
     {
+        public List<ServicioEN> MostrarServicio()
+        {
+            return ServicioDAL.MostrarServicio();
+        }
+        public int GuardarServicio(ServicioEN pservicioEN)
+        {
+            return ServicioDAL.AgregarServicio(pservicioEN);
+        }
+        public int EliminarServicio(ServicioEN pservicioEN)
+        {
+            return ServicioDAL.EliminarServicio(pservicioEN);
+        }
+        public int ModificarServicio(ServicioEN pservicioEN)
+        {
+            return ServicioDAL.ModificarServicio(pservicioEN);
+        }
     }
 }

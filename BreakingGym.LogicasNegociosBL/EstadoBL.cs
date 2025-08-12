@@ -8,7 +8,24 @@ using System.Threading.Tasks;
 
 namespace BreakingGym.LogicasNegociosBL
 {
-    internal class EstadoBL
+    public class EstadoBL
     {
+        EstadoDAL estadoDAL = new EstadoDAL();
+        public List<EstadoEN> MostrarEstado()
+        {
+            return estadoDAL.MostrarEstado();
+        }
+        public int GuardarEstado(EstadoEN pestadoEN)
+        {
+            return estadoDAL.AgregarEstado(pestadoEN);
+        }
+        public int EliminarEstado(EstadoEN pestadoEN)
+        {
+            return estadoDAL.EliminarEstado(pestadoEN);
+        }
+        public int ModificarEstado(EstadoEN pestadoEN)
+        {
+            return estadoDAL.ModificarEstado(pestadoEN);
+        }
     }
 }

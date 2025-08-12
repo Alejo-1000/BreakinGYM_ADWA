@@ -8,7 +8,23 @@ using System.Threading.Tasks;
 
 namespace BreakingGym.LogicasNegociosBL
 {
-    internal class RegistroAsistenciaBL
+    public class RegistroAsistenciaBL
     {
+        public List<RegistroAsistenciaEN> MostrarAsistencia()
+        {
+            return RegistroAsistenciaDAL.MostrarAsistencia();
+        }
+        public static List<RegistroAsistenciaEN> BuscarAsistencia(string fechaAsistencia)
+        {
+            return RegistroAsistenciaDAL.BuscarAsistencia(fechaAsistencia);
+        }
+        public int GuardarInscripcion(RegistroAsistenciaEN pAsistenciasEN)
+        {
+            return RegistroAsistenciaDAL.AgregarAsistencia(pAsistenciasEN);
+        }
+        public int ModificarAsistencia(RegistroAsistenciaEN pinscripcionEN)
+        {
+            return RegistroAsistenciaDAL.ModificarAsistencia(pinscripcionEN);
+        }
     }
 }
