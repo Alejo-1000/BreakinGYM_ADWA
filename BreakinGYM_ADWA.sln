@@ -6,10 +6,21 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BreakingGym.EntidadNegocioEN", "BreakingGym.EntidadNegocioEN\BreakingGym.EntidadNegocioEN.csproj", "{F9C7A311-26B2-467D-B5D4-7AF993FD11B0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BreakingGym.LogicaAccesoDatosDAL", "BreakingGym.LogicaAccesoDatosDAL\BreakingGym.LogicaAccesoDatosDAL.csproj", "{65D8E476-62B5-4502-83E2-F8D7613133EE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F9C7A311-26B2-467D-B5D4-7AF993FD11B0} = {F9C7A311-26B2-467D-B5D4-7AF993FD11B0}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BreakingGym.LogicaNegociosBL", "BreakingGym.LogicaNegociosBL\BreakingGym.LogicaNegociosBL.csproj", "{97843057-DEE4-4337-ADB2-88F2C555BCF8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{65D8E476-62B5-4502-83E2-F8D7613133EE} = {65D8E476-62B5-4502-83E2-F8D7613133EE}
+		{F9C7A311-26B2-467D-B5D4-7AF993FD11B0} = {F9C7A311-26B2-467D-B5D4-7AF993FD11B0}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BreakingGym.InterfazUsuarioUI", "BreakingGym.InterfazUsuarioUI\BreakingGym.InterfazUsuarioUI.csproj", "{C18656EB-E224-49AA-AB6C-D9016F6834CB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{97843057-DEE4-4337-ADB2-88F2C555BCF8} = {97843057-DEE4-4337-ADB2-88F2C555BCF8}
+		{F9C7A311-26B2-467D-B5D4-7AF993FD11B0} = {F9C7A311-26B2-467D-B5D4-7AF993FD11B0}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

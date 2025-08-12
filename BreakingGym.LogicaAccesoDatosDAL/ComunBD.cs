@@ -16,7 +16,7 @@ namespace BreakingGym.LogicaAccesoDatosDAL
         {
             SqlServer, Oracle, DB2
         }
-        public const string Sqlconn = @"Data Source=.\;Initial Catalog=PruebaGym;Integrated Security=True;TrustServerCertificate=True;";
+        public const string Sqlconn = @"Data Source=.\;Initial Catalog=BreakingGym;Integrated Security=True;TrustServerCertificate=True;";
         public static IDbConnection ObtenerConexion(TipoBD pTipoBD)
         {
             IDbConnection _conn;
