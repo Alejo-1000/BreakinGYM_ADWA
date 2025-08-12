@@ -12,7 +12,7 @@ namespace BreakingGym.LogicasNegociosBL
     {
         public List<InscripcionEN> MostrarInscripcion()
         {
-            return InscripcionDAL.MostrarInscripcion();
+            retur InscripcionDAL.MostrarInscripcion();
         }
         public static List<InscripcionEN> BuscarInscripcion(string idCliente)
         {
