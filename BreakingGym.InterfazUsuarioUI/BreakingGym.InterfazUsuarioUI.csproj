@@ -9,8 +9,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="fondo.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MahApps.Metro" Version="2.4.10" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BreakingGym.EntidadesNegocioEN\BreakingGym.EntidadesNegocioEN.csproj" />
     <ProjectReference Include="..\BreakingGym.LogicasNegociosBL\BreakingGym.LogicasNegociosBL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="fondo.jpg" />
   </ItemGroup>
 
 </Project>
