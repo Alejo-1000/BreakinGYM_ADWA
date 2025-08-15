@@ -1,12 +1,28 @@
-﻿<Window x:Class="BreakingGym.InterfazUsuarioUI.Membresia"
+﻿<mah:MetroWindow x:Class="BreakingGym.InterfazUsuarioUI.Membresia"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:local="clr-namespace:BreakingGym.InterfazUsuarioUI"
         mc:Ignorable="d"
         Title="Membresia" Height="450" Width="800">
     <Grid>
-        
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="1"/>
+                <GradientStop Color="#FF28628C" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button Content="Button" Margin="357,97,281,287"/>
+        <Button x:Name="BtnGuardar" Content="" Margin="222,101,526,283">
+            <Button.Background>
+                <ImageBrush ImageSource="/plus--v2.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnModificar" Content="Button" Margin="588,268,50,116" Click="BtnModificar_Click"/>
+        <DataGrid HorizontalAlignment="Left" Height="149" Margin="42,184,0,0" VerticalAlignment="Top" Width="386" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <TextBox HorizontalAlignment="Left" Height="34" Margin="605,68,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="85"/>
+
     </Grid>
-</Window>
+</mah:MetroWindow>

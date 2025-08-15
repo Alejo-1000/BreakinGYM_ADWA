@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <None Remove="fondo.jpg" />
+    <None Remove="plus--v2.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,6 +24,7 @@
 
   <ItemGroup>
     <Resource Include="fondo.jpg" />
+    <Resource Include="plus--v2.png" />
   </ItemGroup>
 
 </Project>
