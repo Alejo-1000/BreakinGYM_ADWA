@@ -1,12 +1,44 @@
-﻿<Window x:Class="BreakingGym.InterfazUsuarioUI.Rol"
+﻿<mah:MetroWindow x:Class="BreakingGym.InterfazUsuarioUI.Rol"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:local="clr-namespace:BreakingGym.InterfazUsuarioUI"
         mc:Ignorable="d"
         Title="Rol" Height="450" Width="800">
     <Grid>
-        
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="1"/>
+                <GradientStop Color="#FF28628C" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="43,145,203,53"/>
+        <Label Content="Rol" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Foreground="White" FontSize="48" FontFamily="Arial Rounded MT Bold"/>
+        <TextBox x:Name="txtRol" HorizontalAlignment="Left" Margin="173,96,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="405"/>
+        <Label Content="Rol" HorizontalAlignment="Left" Margin="129,96,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontSize="18" Foreground="White"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="681,145,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnGuardar" Content="" HorizontalAlignment="Left" Margin="681,116,0,0" VerticalAlignment="Top" Height="50" Width="50">
+            <Button.Background>
+                <ImageBrush ImageSource="/mas.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnEliminar" Content="" HorizontalAlignment="Left" Margin="681,217,0,0" VerticalAlignment="Top" Height="50" Width="50">
+            <Button.Background>
+                <ImageBrush ImageSource="/eliminar (2).png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnModificar" Content="" HorizontalAlignment="Left" Margin="681,321,0,0" VerticalAlignment="Top" Height="50" Width="50">
+            <Button.Background>
+                <ImageBrush ImageSource="/editar-texto.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnRegresar" Content="" HorizontalAlignment="Left" Margin="720,25,0,0" VerticalAlignment="Top" Width="50" Height="50">
+            <Button.Background>
+                <ImageBrush ImageSource="/regreso.png"/>
+            </Button.Background>
+        </Button>
+
     </Grid>
-</Window>
+</mah:MetroWindow>
