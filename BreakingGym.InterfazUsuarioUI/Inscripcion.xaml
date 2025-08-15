@@ -1,0 +1,45 @@
+﻿<Window x:Class="BreakingGym.InterfazUsuarioUI.Inscripcion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BreakingGym.InterfazUsuarioUI"
+        mc:Ignorable="d"
+        Title="Inscripcion" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="1"/>
+                <GradientStop Color="#FF28628C" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Button x:Name="BtnGuardar" Content="" HorizontalAlignment="Left" Height="48" Margin="667,367,0,0" VerticalAlignment="Top" Width="50" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="/mas.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnEliminar" Content="" HorizontalAlignment="Left" Height="48" Margin="440,367,0,0" VerticalAlignment="Top" Width="50" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="/eliminar (2).png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnModificar" Content="" HorizontalAlignment="Left" Height="48" Margin="558,367,0,0" VerticalAlignment="Top" Width="50" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="/editar-texto.png"/>
+            </Button.Background>
+        </Button>
+
+        <DataGrid HorizontalAlignment="Left" Height="323" Margin="31,78,0,0" VerticalAlignment="Top" Width="277" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#FFAEAEB2" Foreground="Black" SelectionChanged="DataGrid_SelectionChanged"/>
+        <Label Content="Inscripciones" HorizontalAlignment="Center" Margin="0,6,0,0" VerticalAlignment="Top" Foreground="White" FontSize="30"/>
+        <Label Content="Cliente" HorizontalAlignment="Center" Margin="0,102,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtCliente" TextWrapping="Wrap" Text="" Margin="475,88,126,319"/>
+        <Label Content="Membresia" HorizontalAlignment="Left" Margin="377,140,0,0" VerticalAlignment="Top"/>
+        <TextBox TextWrapping="Wrap" Text="" Margin="475,326,137,81"/>
+        <TextBox TextWrapping="Wrap" Text="TextBox" Margin="475,255,137,152"/>
+        <TextBox TextWrapping="Wrap" Text="TextBox" Margin="475,139,137,268"/>
+        <TextBox TextWrapping="Wrap" Text="TextBox" Margin="475,194,137,213"/>
+
+
+    </Grid>
+</Window>
