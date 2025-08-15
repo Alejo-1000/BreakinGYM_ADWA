@@ -8,21 +8,63 @@
         mc:Ignorable="d"
         Title="Membresia" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="Black" Offset="1"/>
                 <GradientStop Color="#FF28628C" Offset="0"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Button Content="Button" Margin="357,97,281,287"/>
-        <Button x:Name="BtnGuardar" Content="" Margin="222,101,526,283">
+        <Button x:Name="BtnGuardar" Content="" Margin="474,348,280,43">
             <Button.Background>
-                <ImageBrush ImageSource="/plus--v2.png"/>
+                <ImageBrush ImageSource="/mas.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="BtnModificar" Content="Button" Margin="588,268,50,116" Click="BtnModificar_Click"/>
-        <DataGrid HorizontalAlignment="Left" Height="149" Margin="42,184,0,0" VerticalAlignment="Top" Width="386" d:ItemsSource="{d:SampleData ItemCount=5}"/>
-        <TextBox HorizontalAlignment="Left" Height="34" Margin="605,68,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="85"/>
+        <Button x:Name="BtnModificar" Content="" Margin="692,346,62,43" Click="BtnModificar_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/editar-texto.png"/>
+            </Button.Background>
+        </Button>
+        <DataGrid HorizontalAlignment="Left" Height="241" Margin="33,174,0,0" VerticalAlignment="Top" Width="347" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <Button x:Name="BtnEliminar" Content="" HorizontalAlignment="Left" Height="42" Margin="584,348,0,0" VerticalAlignment="Top" Width="44" Click="BtnEliminar_Click">
+            <Button.Background
+        >
+                <ImageBrush
+        ImageSource="/eliminar (2).png" Stretch="Fill"/>
+            </Button.Background>
+
+        </Button>
+        <Button x:Name="BtnRefrescar" Content="" HorizontalAlignment="Left" Height="33" Margin="47,111,0,0" VerticalAlignment="Top" Width="38" RenderTransformOrigin="0.461,0.91">
+            <Button.Background>
+                <ImageBrush ImageSource="/actualizar.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnBuscar" Content="" HorizontalAlignment="Left" Height="34" Margin="344,107,0,0" VerticalAlignment="Top" Width="36" Click="BtnBuscar_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/buscar.png"/>
+            </Button.Background>
+        </Button>
+        <TextBox x:Name="TxtBuscarMembresia" HorizontalAlignment="Left" Height="21" Margin="108,111,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="196"/>
+        <Label x:Name="BuscarMembresía" Content="Buscar Membresía" HorizontalAlignment="Left" Height="30" Margin="118,77,0,0" VerticalAlignment="Top" Width="156" AutomationProperties.Name="" FontFamily="Arial Rounded MT Bold" FontSize="16" FontWeight="Medium" Foreground="White"/>
+        <Button x:Name="BtnVolver" Content="" HorizontalAlignment="Left" Height="43" Margin="746,10,0,0" VerticalAlignment="Top" Width="44">
+            <Button.Background>
+                <ImageBrush ImageSource="/regreso.png"/>
+            </Button.Background>
+        </Button>
+        <Label Content="Membresía" HorizontalAlignment="Center" Height="78" Margin="0,-6,0,0" VerticalAlignment="Top" Width="332" FontSize="60" Foreground="White" FontFamily="Arial Rounded MT Bold"/>
+        <TextBox x:Name="TxtNombre" HorizontalAlignment="Left" Height="17" Margin="605,106,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="135"/>
+        <TextBox x:Name="TxtServicio" HorizontalAlignment="Left" Height="26" Margin="605,148,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="135"/>
+        <TextBox x:Name="TxtPrecio" HorizontalAlignment="Left" Height="26" Margin="605,191,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="135" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="TxtDuracion" HorizontalAlignment="Left" Height="26" Margin="605,230,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="135"/>
+        <TextBox x:Name="TxtDescripcion" HorizontalAlignment="Left" Height="26" Margin="605,274,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="135"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Height="28" Margin="478,104,0,0" VerticalAlignment="Top" Width="69" Foreground="White" FontFamily="Arial Rounded MT Bold" FontSize="14"/>
+        <Label Content="Servicio" HorizontalAlignment="Left" Height="28" Margin="479,146,0,0" VerticalAlignment="Top" Width="69" Foreground="White" FontFamily="Arial Rounded MT Bold" FontSize="14" RenderTransformOrigin="0.517,0.073"/>
+        <Label Content="Precio" HorizontalAlignment="Left" Height="28" Margin="479,188,0,0" VerticalAlignment="Top" Width="70" Foreground="White" FontFamily="Arial Rounded MT Bold" FontSize="14" RenderTransformOrigin="0.821,0.335"/>
+        <Label Content="Duracion&#xD;&#xA;" HorizontalAlignment="Left" Height="28" Margin="479,228,0,0" VerticalAlignment="Top" Width="74" Foreground="White" FontFamily="Arial Rounded MT Bold" FontSize="14"/>
+        <Label Content="Descripción&#xD;&#xA;" HorizontalAlignment="Left" Height="28" Margin="478,272,0,0" VerticalAlignment="Top" Width="94" Foreground="White" FontFamily="Arial Rounded MT Bold" FontSize="14"/>
 
     </Grid>
 </mah:MetroWindow>
