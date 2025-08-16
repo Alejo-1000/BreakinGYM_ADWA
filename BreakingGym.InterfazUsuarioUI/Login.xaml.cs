@@ -24,5 +24,16 @@ namespace BreakingGym.InterfazUsuarioUI
         {
             InitializeComponent();
         }
+
+
+        private void txtCorreo_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void txtContrasenia_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
