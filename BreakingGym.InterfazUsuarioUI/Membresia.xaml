@@ -48,7 +48,7 @@
             </Button.Background>
         </Button>
         <TextBox x:Name="TxtBuscarMembresia" HorizontalAlignment="Left" Height="21" Margin="108,111,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="196"/>
-        <Label x:Name="BuscarMembresía" Content="Buscar Membresía" HorizontalAlignment="Left" Height="30" Margin="118,77,0,0" VerticalAlignment="Top" Width="156" AutomationProperties.Name="" FontFamily="Arial Rounded MT Bold" FontSize="16" FontWeight="Medium" Foreground="White"/>
+        <Label x:Name="BuscarMembresía" Content="Buscar Membresía" HorizontalAlignment="Left" Height="30" Margin="118,77,0,0" VerticalAlignment="Top" Width="156" AutomationProperties.Name="" FontFamily="Arial Rounded MT Bold" FontSize="14" FontWeight="Medium" Foreground="White"/>
         <Button x:Name="BtnVolver" Content="" HorizontalAlignment="Left" Height="43" Margin="746,10,0,0" VerticalAlignment="Top" Width="44">
             <Button.Background>
                 <ImageBrush ImageSource="/regreso.png"/>
