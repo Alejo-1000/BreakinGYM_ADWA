@@ -9,7 +9,7 @@
         Title="Inicio Administrador" Height="450" Width="800">
     <Grid Background="#00000000">
         <DockPanel Height="27" LastChildFill="False" VerticalAlignment="Top" Background="#FF28628C">
-            <Button DockPanel.Dock="Right" Content="Salir" Width="100" Background="#FF28628C" BorderBrush="Transparent" Foreground="#FFFDF9F9" FontFamily="Arial Rounded MT Bold" FontSize="11" FontStyle="Italic"/>
+            
             <Button Content="Inscripciones" Width="138" Background="#00000000" BorderBrush="Transparent" Foreground="#FFFDF9F9" FontFamily="Arial Rounded MT Bold" FontSize="11"/>
             <GridSplitter Width="2" Background="#FFAEAEB2"/>
             <Button Content="Asistencia" Width="115" Background="#00000000" BorderBrush="Transparent" Foreground="#FFFDF9F9" FontFamily="Arial Rounded MT Bold" FontSize="11" FontStyle="Italic"/>
@@ -23,16 +23,23 @@
 
             <GridSplitter Background="#FFAEAEB2" Width="2"/>
             <Menu Width="100" Background="{x:Null}">
-                <MenuItem Header="OTROS" Background="{x:Null}" FontFamily="Arial Rounded MT Bold" FontSize="11" Foreground="#FFFDF9F9" />
-                <MenuItem Header="Configuración">
-                    <MenuItem Header="Perfil"/>
-                    <MenuItem Header="Preferencias"/>
+                <MenuItem Header="OTROS" Background="{x:Null}" Foreground="White" FontFamily="Arial Rounded MT Bold" FontSize="13">
+                    <MenuItem Header="Usuarios"/>
+                    <MenuItem Header="Reportes"/>
+                    <MenuItem Header="Roles"/>
+                    <MenuItem Header="Estado de Inscripciones"/>
+                    <MenuItem Header="Documentos de identificación"/>
                 </MenuItem>
-                <MenuItem Header="Ayuda">
-                    <MenuItem Header="Documentación"/>
-                    <MenuItem Header="Soporte Técnico"/>
+
+            </Menu>
+            <Menu Background="{x:Null}" DockPanel.Dock="Right" Width="100" >
+                <MenuItem Header="SALIR" Background="{x:Null}" Foreground="White" FontFamily="Arial Rounded MT Bold" FontSize="13">
+                   
+                    <MenuItem Header="Salir del Sistema"/>
+                    <MenuItem Header="Cerrar Sesión"/>
                 </MenuItem>
             </Menu>
+
         </DockPanel>
         <Label Content="¡Bienvenido a Inicio!" HorizontalAlignment="Center" Height="63" VerticalAlignment="Top" Width="402" FontFamily="Times New Roman" FontSize="45" Margin="0,91,0,0"/>
         <Image Source="/0a5bcaaf-ccf2-49de-9d75-1f233391d1de.png" Margin="317,149,317,95"/>

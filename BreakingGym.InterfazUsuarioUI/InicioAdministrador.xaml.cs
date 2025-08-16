@@ -23,5 +23,7 @@ namespace BreakingGym.InterfazUsuarioUI
         {
             InitializeComponent();
         }
+
+        
     }
 }

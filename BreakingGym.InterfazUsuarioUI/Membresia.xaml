@@ -23,13 +23,13 @@
                 <ImageBrush ImageSource="/mas.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="BtnModificar" Content="" Margin="692,346,62,43" Click="BtnModificar_Click">
+        <Button x:Name="BtnModificar" Content="" Margin="692,346,62,43" >
             <Button.Background>
                 <ImageBrush ImageSource="/editar-texto.png"/>
             </Button.Background>
         </Button>
         <DataGrid HorizontalAlignment="Left" Height="241" Margin="33,174,0,0" VerticalAlignment="Top" Width="347" d:ItemsSource="{d:SampleData ItemCount=5}"/>
-        <Button x:Name="BtnEliminar" Content="" HorizontalAlignment="Left" Height="42" Margin="584,348,0,0" VerticalAlignment="Top" Width="44" Click="BtnEliminar_Click">
+        <Button x:Name="BtnEliminar" Content="" HorizontalAlignment="Left" Height="42" Margin="584,348,0,0" VerticalAlignment="Top" Width="44" >
             <Button.Background
         >
                 <ImageBrush
@@ -42,7 +42,7 @@
                 <ImageBrush ImageSource="/actualizar.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="BtnBuscar" Content="" HorizontalAlignment="Left" Height="34" Margin="344,107,0,0" VerticalAlignment="Top" Width="36" Click="BtnBuscar_Click">
+        <Button x:Name="BtnBuscar" Content="" HorizontalAlignment="Left" Height="34" Margin="344,107,0,0" VerticalAlignment="Top" Width="36">
             <Button.Background>
                 <ImageBrush ImageSource="/buscar.png"/>
             </Button.Background>
@@ -57,7 +57,7 @@
         <Label Content="Membresía" HorizontalAlignment="Center" Height="78" Margin="0,-6,0,0" VerticalAlignment="Top" Width="332" FontSize="60" Foreground="White" FontFamily="Arial Rounded MT Bold"/>
         <TextBox x:Name="TxtNombre" HorizontalAlignment="Left" Height="17" Margin="605,106,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="135"/>
         <TextBox x:Name="TxtServicio" HorizontalAlignment="Left" Height="26" Margin="605,148,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="135"/>
-        <TextBox x:Name="TxtPrecio" HorizontalAlignment="Left" Height="26" Margin="605,191,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="135" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="TxtPrecio" HorizontalAlignment="Left" Height="26" Margin="605,191,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="135" />
         <TextBox x:Name="TxtDuracion" HorizontalAlignment="Left" Height="26" Margin="605,230,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="135"/>
         <TextBox x:Name="TxtDescripcion" HorizontalAlignment="Left" Height="26" Margin="605,274,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="135"/>
         <Label Content="Nombre" HorizontalAlignment="Left" Height="28" Margin="478,104,0,0" VerticalAlignment="Top" Width="69" Foreground="White" FontFamily="Arial Rounded MT Bold" FontSize="14"/>
