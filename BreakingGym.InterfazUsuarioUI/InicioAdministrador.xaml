@@ -9,19 +9,32 @@
         Title="Inicio Administrador" Height="450" Width="800">
     <Grid Background="#00000000">
         <DockPanel Height="27" LastChildFill="False" VerticalAlignment="Top" Background="#FF28628C">
-            <Button DockPanel.Dock="Right" Content="Salir" Width="100" Background="#FF28628C" BorderBrush="Transparent"/>
-            <Button Content="Inscripciones" Width="138" Background="#00000000" BorderBrush="Transparent"/>
-            <GridSplitter Width="5" Background="#FF99ADBB"/>
-            <Button Content="Asistencia" Width="115" Background="#00000000" BorderBrush="Transparent"/>
-            <GridSplitter Width="5" Background="#FF99ADBB"/>
-            <Button Content="Membresías" Width="108" Background="#FF28628C" BorderBrush="Transparent"/>
-            <GridSplitter Width="5" Background="#FF99ADBB"/>
-            <Button Content="Clientes" Width="98" Background="#00000000" BorderBrush="Transparent"/>
-            <GridSplitter Width="5" Background="#FF99ADBB"/>
-            <Button Content="Servicios" Width="101" Background="#00000000" BorderBrush="Transparent"/>
-            <GridSplitter Background="#FF99ADBB" DockPanel.Dock="Right" Width="5"/>
-            <GridSplitter Background="#FF99ADBB" Width="5"/>
+            <Button DockPanel.Dock="Right" Content="Salir" Width="100" Background="#FF28628C" BorderBrush="Transparent" Foreground="#FFFDF9F9" FontFamily="Arial Rounded MT Bold" FontSize="11" FontStyle="Italic"/>
+            <Button Content="Inscripciones" Width="138" Background="#00000000" BorderBrush="Transparent" Foreground="#FFFDF9F9" FontFamily="Arial Rounded MT Bold" FontSize="11"/>
+            <GridSplitter Width="2" Background="#FFAEAEB2"/>
+            <Button Content="Asistencia" Width="115" Background="#00000000" BorderBrush="Transparent" Foreground="#FFFDF9F9" FontFamily="Arial Rounded MT Bold" FontSize="11" FontStyle="Italic"/>
+            <GridSplitter Width="2" Background="#FFAEAEB2"/>
+            <Button Content="Membresías" Width="108" Background="#FF28628C" BorderBrush="Transparent" Foreground="#FFFDF9F9" FontFamily="Arial Rounded MT Bold" FontSize="11" FontStyle="Italic"/>
+            <GridSplitter Width="2" Background="#FFAEAEB2"/>
+            <Button Content="Clientes" Width="98" Background="#00000000" BorderBrush="Transparent" Foreground="#FFFDF9F9" FontFamily="Arial Rounded MT Bold" FontSize="11" FontStyle="Italic"/>
+            <GridSplitter Width="2" Background="#FFAEAEB2"/>
+            <Button Content="Servicios" Width="101" Background="#00000000" BorderBrush="Transparent" Foreground="#FFFDF9F9" FontFamily="Arial Rounded MT Bold" FontSize="11" FontStyle="Italic"/>
+            <GridSplitter Background="#FFAEAEB2" DockPanel.Dock="Right" Width="2"/>
+
+            <GridSplitter Background="#FFAEAEB2" Width="2"/>
+            <Menu Width="100" Background="{x:Null}">
+                <MenuItem Header="OTROS" Background="{x:Null}" FontFamily="Arial Rounded MT Bold" FontSize="11" Foreground="#FFFDF9F9" />
+                <MenuItem Header="Configuración">
+                    <MenuItem Header="Perfil"/>
+                    <MenuItem Header="Preferencias"/>
+                </MenuItem>
+                <MenuItem Header="Ayuda">
+                    <MenuItem Header="Documentación"/>
+                    <MenuItem Header="Soporte Técnico"/>
+                </MenuItem>
+            </Menu>
         </DockPanel>
-        <Label Content="¡Bienvenido a Inicio!" HorizontalAlignment="Center" Height="63" VerticalAlignment="Top" Width="402" FontFamily="Times New Roman" FontSize="45" Margin="0,139,0,0"/>
+        <Label Content="¡Bienvenido a Inicio!" HorizontalAlignment="Center" Height="63" VerticalAlignment="Top" Width="402" FontFamily="Times New Roman" FontSize="45" Margin="0,91,0,0"/>
+        <Image Source="/0a5bcaaf-ccf2-49de-9d75-1f233391d1de.png" Margin="317,149,317,95"/>
     </Grid>
 </mah:MetroWindow>
