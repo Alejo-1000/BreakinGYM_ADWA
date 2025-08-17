@@ -28,22 +28,22 @@
         <TextBox HorizontalAlignment="Left" Margin="418,109,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="158"/>
         <TextBox HorizontalAlignment="Left" Margin="418,154,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="158"/>
         <Label Content="Cliente" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" FontSize="36" FontFamily="Arial Rounded MT Bold"/>
-        <Button x:Name="btnRegresar" Content="" HorizontalAlignment="Left" Margin="722,21,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.589,0.551" Width="50" Height="50">
+        <Button x:Name="btnRegresar" Content="" HorizontalAlignment="Left" Margin="750,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.589,0.551" Width="40" Height="40" BorderBrush="{x:Null}">
             <Button.Background>
                 <ImageBrush ImageSource="/regreso.png"/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="692,149,0,0" VerticalAlignment="Top" Height="50" Width="50">
+        <Button Content="" HorizontalAlignment="Left" Margin="692,149,0,0" VerticalAlignment="Top" Height="50" Width="50" BorderBrush="{x:Null}">
             <Button.Background>
                 <ImageBrush ImageSource="/mas.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btnEliminar" Content="" HorizontalAlignment="Left" Margin="692,239,0,0" VerticalAlignment="Top" Height="51" Width="50">
+        <Button x:Name="btnEliminar" Content="" HorizontalAlignment="Left" Margin="692,239,0,0" VerticalAlignment="Top" Height="51" Width="50" BorderBrush="{x:Null}">
             <Button.Background>
                 <ImageBrush ImageSource="/eliminar (2).png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btnModificar" Content="" HorizontalAlignment="Left" Margin="691,330,0,0" VerticalAlignment="Top" Height="50" Width="50">
+        <Button x:Name="btnModificar" Content="" HorizontalAlignment="Left" Margin="691,330,0,0" VerticalAlignment="Top" Height="50" Width="50" BorderBrush="{x:Null}">
             <Button.Background>
                 <ImageBrush ImageSource="/editar-texto.png"/>
             </Button.Background>
