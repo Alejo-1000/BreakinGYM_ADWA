@@ -34,7 +34,7 @@ namespace BreakingGym.InterfazUsuarioUI
             dgMostrarEstado.ItemsSource = _mostrarEstado.MostrarEstado();
         }
 
-        private void btnGuardar_Click(object sender, RoutedEventArgs e)
+        private void BtnGuardar_Click(object sender, RoutedEventArgs e)
         {
             var estado = new EstadoEN
             {
@@ -71,54 +71,102 @@ namespace BreakingGym.InterfazUsuarioUI
 
         }
 
-        private void btnEliminar_Click(object sender, RoutedEventArgs e)
+        private void BtnEliminar_Click(object sender, RoutedEventArgs e)
         {
-
-            // Validar que el campo no esté vacío
-            if (string.IsNullOrWhiteSpace(txtId.Text))
-            {
-                MessageBox.Show("Por favor, seleccione un Id.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-
-            // Validar que sea numérico
-            if (!int.TryParse(txtId.Text, out int id))
-            {
-                MessageBox.Show("El Id debe ser un número válido.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-
-            if (id <= 0)
-            {
-                MessageBox.Show("Por favor, seleccione un Id válido.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-
             var est = new EstadoEN
             {
-                Id = id
+                Id = Convert.ToByte(TxtId.Text),
             };
 
-            // Confirmación
+            if (est.Id <= 0)
+            {
+                MessageBox.Show("Por favor, seleccione un Id.",
+                                "Error",
+                                MessageBoxButton.OK,
+                                MessageBoxImage.Error);
+                return;
+            }
+
             var confirmResult = MessageBox.Show("¿Estás seguro que deseas eliminar este Estado?",
-                                               "Confirmar eliminación",
+                                                "Confirmar eliminación",
+                                                MessageBoxButton.YesNo,
+                                                MessageBoxImage.Question);
+
+            if (confirmResult == MessageBoxResult.No)
+                return;
+            else
+            {
+                _mostrarEstado.EliminarEstado(est);
+
+                TxtId.Clear();
+                txtEstado.Clear();
+
+                CargarGrid();
+
+                MessageBox.Show("Estado eliminado correctamente.",
+                                "Éxito",
+                                MessageBoxButton.OK,
+                                MessageBoxImage.Information);
+            }
+
+        }
+
+        private void BtnModificar_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(TxtId.Text))
+            {
+                MessageBox.Show("Por favor, selecciona un Id",
+                                "Validación",
+                                MessageBoxButton.OK,
+                                MessageBoxImage.Warning);
+                TxtId.Focus();
+                return;
+            }
+
+            var estado = new EstadoEN
+            {
+                Id = Convert.ToByte(TxtId.Text),
+                Nombre = txtEstado.Text,
+            };
+
+            if (estado.Id <= 0 || string.IsNullOrEmpty(estado.Nombre))
+            {
+                MessageBox.Show("Por favor, complete todos los campos.",
+                                "Error",
+                                MessageBoxButton.OK,
+                                MessageBoxImage.Error);
+                return;
+            }
+
+            var confirmResult = MessageBox.Show("¿Estás seguro que deseas modificar este Estado?",
+                                               "Confirmar modificación",
                                                MessageBoxButton.YesNo,
                                                MessageBoxImage.Question);
 
             if (confirmResult == MessageBoxResult.No)
                 return;
+            else
+            {
+                _mostrarEstado.ModificarEstado(estado);
 
-            // Eliminar
-            _mostrarEstado.EliminarEstado(est);
+                TxtId.Clear();
+                txtEstado.Clear();
+                CargarGrid();
 
-            // Limpiar campos
-            txtId.Clear();
-            txtEstado.Clear();
+                MessageBox.Show("Estado modificado correctamente.",
+                                "Éxito",
+                                MessageBoxButton.OK,
+                                MessageBoxImage.Information);
+            }
+        }
 
-            // Refrescar DataGrid
-            CargarGrid();
-
-            MessageBox.Show("Estado eliminado correctamente.", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
+        private void dgMostrarEstado_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            if (dgMostrarEstado.SelectedItem is EstadoEN estadoSeleccionado)
+            {
+                TxtId.Text = estadoSeleccionado.Id.ToString();
+                txtEstado.Text = estadoSeleccionado.Nombre;
+            }
         }
     }
 }
